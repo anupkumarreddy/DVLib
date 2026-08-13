@@ -1,0 +1,19 @@
+name: Feature request
+description: Propose a focused enhancement
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What workflow or limitation should DVLib address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Explain behavior, compatibility, and alternatives considered.
+    validations:
+      required: true

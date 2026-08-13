@@ -1,0 +1,47 @@
+name: Bug report
+description: Report reproducible incorrect behavior
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not report security vulnerabilities here; follow SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: DVLib version
+      placeholder: 0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version and operating system
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include a minimal manifest and sanitized output when relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: secrets
+    attributes:
+      label: Sensitive data
+      options:
+        - label: I removed tokens, proprietary HDL, and other sensitive data.
+          required: true

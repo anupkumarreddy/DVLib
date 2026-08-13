@@ -1,0 +1,16 @@
+.git
+.github
+.idea
+.venv
+__pycache__
+*.py[cod]
+*.egg-info
+.pytest_cache
+.ruff_cache
+build
+dist
+tests
+dvlib-data
+registry-data
+dvlib_packages
+dvlib.f

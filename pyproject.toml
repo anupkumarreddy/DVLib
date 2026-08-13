@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dvlib"
+version = "0.1.0"
+description = "Package manager for SystemVerilog/UVM design-verification code"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Anup Kumar Reddy" }]
+keywords = ["systemverilog", "uvm", "verification", "package-manager"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Framework :: FastAPI",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Build Tools",
+]
+dependencies = [
+    "typer>=0.9,<1",
+    "httpx>=0.24,<1",
+    "rich>=13.0,<16",
+    "resolvelib>=1.0,<2",
+    "fastapi>=0.100,<1",
+    "uvicorn>=0.23,<1",
+    "python-multipart>=0.0.6,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "bandit>=1.9",
+    "build>=1.2",
+    "httpx2>=2,<3",
+    "pip-audit>=2.9",
+    "pytest>=7.4",
+    "ruff>=0.1",
+    "twine>=6.0",
+]
+
+[project.scripts]
+dvlib = "dvlib.client.cli:app"
+dvlib-server = "dvlib.server.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/anupkumarreddy/DVLib"
+Repository = "https://github.com/anupkumarreddy/DVLib.git"
+Issues = "https://github.com/anupkumarreddy/DVLib/issues"
+Changelog = "https://github.com/anupkumarreddy/DVLib/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+include = ["dvlib*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+
+# B008: typer.Option(...) / fastapi.Depends(...) in defaults is idiomatic.
+[tool.ruff.lint.per-file-ignores]
+"dvlib/client/cli.py" = ["B008"]
+"dvlib/server/cli.py" = ["B008"]
+"dvlib/server/app.py" = ["B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
