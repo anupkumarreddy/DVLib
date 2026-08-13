@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=83"]
+requires = ["setuptools>=84.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -26,24 +26,24 @@ classifiers = [
     "Topic :: Software Development :: Build Tools",
 ]
 dependencies = [
-    "typer>=0.9,<1",
-    "httpx>=0.24,<1",
-    "rich>=13.0,<16",
-    "resolvelib>=1.0,<2",
-    "fastapi>=0.100,<1",
-    "uvicorn>=0.23,<1",
-    "python-multipart>=0.0.6,<1",
+    "typer>=0.27.1,<1",
+    "httpx>=0.28.1,<1",
+    "rich>=15.0.0,<16",
+    "resolvelib>=1.2.1,<2",
+    "fastapi>=0.141.1,<1",
+    "uvicorn>=0.52.1,<1",
+    "python-multipart>=0.0.32,<1",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "bandit>=1.9",
-    "build>=1.2",
-    "httpx2>=2,<3",
-    "pip-audit>=2.9",
-    "pytest>=7.4",
-    "ruff>=0.1",
-    "twine>=6.0",
+    "bandit>=1.9.4",
+    "build>=1.5.0",
+    "httpx2>=2.10.0,<3",
+    "pip-audit>=2.10.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.2",
+    "twine>=7.0.0",
 ]
 
 [project.scripts]
